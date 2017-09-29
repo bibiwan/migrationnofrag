@@ -72,7 +72,7 @@ $dbname = "nofrag_old";
 $login_db = "root";
 $pwd_db = "";
 $bdd = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8', $login_db , $pwd_db);
-$reponse = $bdd->query('select * from news where article = \'1\' order by news_id desc;');
+$reponse = $bdd->query('select * from news order by news_id desc;');
 $i = 0;
 while ($donnees = $reponse->fetch()){
 
