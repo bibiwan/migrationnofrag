@@ -99,11 +99,61 @@ while ($donnees = $reponse->fetch()){
 			
 			
 		}
-		$idArticleCategory = '';
-		if ($donnees['article'] == 1){
-			wp_set_post_terms($id, idArticleCategory, 'category');
-			
+		
+		switch ($donnees['type']){
+			//annonce
+			case '9':
+			wp_set_post_terms($id, 147, 'category');
+			break ;
+			//chroniques
+			case '23':
+			wp_set_post_terms($id, 132, 'category');
+			break;
+			// bullshit
+			case '36' :
+			wp_set_post_terms($id, 144, 'category');
+			break ;
+			// business
+			case '20' :
+			wp_set_post_terms($id, 141, 'category');
+			break;
+			// dossiers
+			case '22' :
+			wp_set_post_terms($id, 133, 'category');
+			break;
+			// mod 
+			case '15' :
+			wp_set_post_terms($id, 146, 'category');
+			break;
+			// vrac
+			case '18' :
+			wp_set_post_terms($id, 142, 'category');
+			break ;
+			// patch
+			case '7' :
+			wp_set_post_terms($id, 143, 'category');
+			break ;
+			// preview
+			case '2' :
+			wp_set_post_terms($id, 131, 'category');
+			break ;
+			// bons plans
+			case '35' :
+			wp_set_post_terms($id, 134, 'category');
+			break;
+			//Tests
+			case '12' :
+			wp_set_post_terms($id, 129, 'category');
+			break;
+			//vidéos
+			case '6':
+			wp_set_post_terms($id, 145, 'category');
+			break;
+			default :
+			// news par défaut
+			wp_set_post_terms($id, 130, 'category');
 		}
+		
 		$i++;
 
 	}	else {
